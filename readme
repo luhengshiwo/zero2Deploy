@@ -1,0 +1,44 @@
+小结
+train_test要实现的功能
+1. 来一个原始数据，将其分为train dev test
+2. 需要一个word2vec的程序，并且知道是否使用word2vec 不需要word2vec
+3. 需要一个全局config.py文件
+4. 需要一个.py文件专门处理 tf.data shuffle的意义
+5. 将model代码剥离出来，只有接口
+6. 区分二分类和多分类
+6. 需要一个early-stop,断点续传,和tensorboard
+6. 需要将dev数据集纳入考虑
+7. 输出一个测试集的数据，并且可以分析
+train的数据输入和dev的数据输入
+drop out
+需要设定全局randomseed
+
+从0开始训练一个自然语言处理多分类任务
+
+要看transformer
+
+将生成的model文件放到指定的地方
+安装docker
+sudo apt-get install docker
+# 查看当前部署的服务
+docker ps 
+安装server
+docker pull tensorflow/serving
+
+docker run -it --rm -p 8500:8500 -p 8501:8501 -v "/my_cls_model:/models/my_cls_model" -e MODEL_NAME=my_cls_model tensorflow/serving
+
+此时服务已经布好
+使用ser.py 去测试
+
+真正的上线是需要flask 作为中间件，用rest来调取flask， flask调取server
+flask 见 app.py
+app.py上需要对数据进行预处理
+rest 见simple_request.py
+
+
+需要将tf.data 抽象出来
+需要加一些注释：
+需要将算法弄高级一点
+predict需要改一下
+
+需要写一篇博客叫从 入门到部署：tensorflow2.0 keras
