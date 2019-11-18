@@ -52,7 +52,7 @@ python simple_request.py
 Follow the instruction. Hope you enjoy it.
 
 ## Reference 
-
+[Using Tensorflow2.0 Keras to deply sentiment analysis model from scratch ](https://zhuanlan.zhihu.com/p/92350972).
 
 ## Folder Structure
 ```

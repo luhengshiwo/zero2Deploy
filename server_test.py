@@ -2,7 +2,6 @@ import json
 import requests
 import numpy as np
 X_new = [[1,4,5,7,8],[2,4,5,9,10]]
-print(X_new)
 input_data_json = json.dumps({
     "signature_name": "serving_default",
     "instances": X_new,
